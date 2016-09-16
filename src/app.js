@@ -1,10 +1,17 @@
 var React = require('react');
+var Router = require('react-router').Router;
+var Route = require('react-router').Route;
+var hashHistory = require('react-router').hashHistory;
+var Home = require('./home');
+var Address = require('./address');
 
 var App = React.createClass({
   render: function(){
-    return (<div>
-      <h2>Hello World</h2>
-    </div>);
+    return (
+      <Router history={hashHistory}>
+        <Route path='/' component={Home}/>
+        <Route path='/address' component={Address}/>
+      </Router>);
   }
 });
 
