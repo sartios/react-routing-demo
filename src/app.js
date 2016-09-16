@@ -4,6 +4,7 @@ var Route = require('react-router').Route;
 var hashHistory = require('react-router').hashHistory;
 var Home = require('./home');
 var Address = require('./address');
+var NotFound = require('./not-found');
 
 var App = React.createClass({
   render: function(){
@@ -11,6 +12,7 @@ var App = React.createClass({
       <Router history={hashHistory}>
         <Route path='/' component={Home}/>
         <Route path='/address' component={Address}/>
+        <Route path='*' component={NotFound}/>
       </Router>);
   }
 });
